@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <!-- <li><a class="active" href="{{url_for('home')}}">Home</a></li> -->
+      <li><a href="{{url_for('course_insert')}}">Insert Course</a></li>
+      <li><a href="{{url_for('course_update')}}">Update Course</a></li>
+      <li><a href="{{url_for('course_retrive')}}">Check Course</a></li>
+      <li><a href="{{url_for('course_delete')}}">Delete Course</a></li>
+      <li><a href="{{url_for('course_check_api')}}" target="_blank">API Course</a></li>
+    </ul>
+    <div class="form_container">
+      <h1 style="color:red">{{ flag }}</h1>
+      <form class="" action="{{url_for('handle_insert_course')}}" method="post">
+        <fieldset>
+          <center><legend style="color:White">Course Details</legend></center>
+          <table>
+            <tr>
+              <td>Course Name</td>
+              <td><input type="text" name="cour_name" placeholder="Operating System"></td>
+            </tr>
+            <tr>
+              <td>Course Code</td>
+              <td><input type="text" name="cour_code" placeholder="CSE2001"></td>
+            </tr>
+            <tr>
+              <td>Faculty</td>
+              <td><input type="text" name="faculty" placeholder="Prof. akila maheshwari"></td>
+            </tr>
+            <tr>
+              <td>Book</td>
+              <td><input type="text" name="book" placeholder="Mc Grills pub."></td>
+            </tr>
+            <tr>
+              <td>Department</td>
+              <td><input type="text" name="department" placeholder="Computer Science"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <center><input type="submit" name="submit" value="submit"></center>
+      </form>
+    </div>
+  </body>
+</html>

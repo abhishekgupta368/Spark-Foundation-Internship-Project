@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+  color: white;
+  text-decoration: none;
+}
+/*----------------------------*/
+table{
+  margin: 40px auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 25px;
+}
+
+table tr th,table tr td{
+  padding: 5px;
+  text-align: center;
+  border: 3px solid #dddddd;
+}

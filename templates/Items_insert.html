@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <!-- <li><a class="active" href="{{url_for('home')}}">Home</a></li> -->
+      <li><a href="{{url_for('item_insert')}}">Insert Item</a></li>
+      <li><a href="{{url_for('item_update')}}">Update Item</a></li>
+      <li><a href="{{url_for('item_retrive')}}">Check Item</a></li>
+      <li><a href="{{url_for('item_delete')}}">Delete Item</a></li>
+      <li><a href="{{url_for('item_check_api')}}" target="_blank">API Item</a></li>
+    </ul>
+    <div class="form_container">
+      <h1 style="color:red">{{ flag }}</h1>
+      <form class="" action="{{url_for('handle_insert_item')}}" method="post">
+        <fieldset>
+          <center><legend style="color:White">Item Details</legend></center>
+          <table>
+            <tr>
+              <td>Item Name</td>
+              <td><input type="text" name="name" placeholder="Pen"></td>
+            </tr>
+            <tr>
+              <td>Code</td>
+              <td><input type="text" name="code" placeholder="ITM1203"></td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td><input type="text" name="cost" placeholder="500"></td>
+            </tr>
+            <tr>
+              <td>Item Color</td>
+              <td><input type="text" name="color" placeholder="Red"></td>
+            </tr>
+            <tr>
+              <td>Item supplier</td>
+              <td><input type="text" name="supplier" placeholder="Natraj Pvt lmt."></td>
+            </tr>
+          </table>
+        </fieldset>
+        <center><input type="submit" name="submit" value="submit"></center>
+      </form>
+    </div>
+  </body>
+</html>

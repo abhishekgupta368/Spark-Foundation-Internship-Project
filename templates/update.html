@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/update.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <!-- <li><a class="active" href="{{url_for('home')}}">Home</a></li> -->
+      <li><a href="{{url_for('insert')}}">Insert</a></li>
+      <li><a href="{{url_for('update')}}">Update</a></li>
+      <li><a href="{{url_for('retrive')}}">Check</a></li>
+      <li><a href="{{url_for('delete')}}">Delete</a></li>
+      <li><a href="{{url_for('check_api')}}" target="_blank">API</a></li>
+    </ul>
+    <div class="form_container">
+      <h1 style="color:red">{{ flag }}</h1>
+      <form class="" action="{{url_for('handle_update')}}" method="post">
+        <fieldset>
+          <center><legend style="color:White">Update Details</legend></center>
+          <table>
+            <tr>
+              <td>Full Name</td>
+              <td>
+                <select  name="full_name">
+                  {% for val in name: %}
+                  <option value="{{val}}" style="color:black;">{{val}}</option>
+                  {%endfor%}
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Country</td>
+              <td><input type="text" name="country" placeholder="India"></td>
+            </tr>
+            <tr>
+              <td>City</td>
+              <td><input type="text" name="city" placeholder="New Delhi"></td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td><input type="email" name="email" placeholder="abc@example.com"></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><input type="text" name="address" placeholder="S-57, Preet Vihar"></td>
+            </tr>
+            <tr>
+              <td>School</td>
+              <td><input type="text" name="school" placeholder="Alhcon International School"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <center><input type="submit" name="submit" value="submit"></center>
+      </form>
+    </div>
+  </body>
+</html>
